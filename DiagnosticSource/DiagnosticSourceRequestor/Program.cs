@@ -2,12 +2,12 @@
 
 namespace DiagnosticSourceRequestor
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
-            var observer = new DiagnosticExamplesObserver();
-           // IDisposable subscription = DiagnosticListener.AllListeners.Subscribe((IObserver<DiagnosticListener>)observer);
+            var observer = new DiagnosticExampleObserver();
+            IDisposable subscription = DiagnosticListener.AllListeners.Subscribe(observer);
 
             var url = "http://localhost:5193/WeatherForecast";
 
